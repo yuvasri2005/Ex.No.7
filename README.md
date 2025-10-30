@@ -78,21 +78,35 @@ import openai
 openai.api_key = "your_api_key_here"
 
 def assistant_response(prompt):
+
     response = openai.ChatCompletion.create(
+    
         model="gpt-3.5-turbo",
+        
         messages=[{"role": "user", "content": prompt}]
     )
+    
     return response["choices"][0]["message"]["content"]
+    
 
 # Simulated user interactions
+
 print("Welcome to your AI Personal Assistant!")
+
 while True:
+
     user_input = input("You: ")
+    
     if user_input.lower() in ["exit", "quit"]:
+    
         print("Assistant: Goodbye! Have a productive day!")
+        
         break
+        
     reply = assistant_response(user_input)
+    
     print("Assistant:", reply)
+    
 
 # Explanation:
 
