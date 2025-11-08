@@ -4,153 +4,108 @@
 # Register no.212222050061
 # Aim: To develop a prompt-based application using ChatGPT - To demonstrate how to create a prompt-based application to organize daily tasks, showing the progression from simple to more advanced prompt designs and their corresponding outputs.
 
-#AI Tools Required: 
+# Aim:
 
-| S.No | Tool Name                  | Purpose                             |
-| :--: | :------------------------- | :---------------------------------- |
-|   1  | ChatGPT / OpenAI API       | To process natural language prompts |
-|   2  | Python (optional)          | To simulate command-line interface  |
-|   3  | Text editor / Google Colab | For writing and testing prompts     |
-|   4  | Spreadsheet / Table        | To maintain task records            |
+To design and develop a prompt-driven AI application that acts as a personalized productivity assistant capable of managing daily tasks, schedules, and wellness tips using large language model (LLM) capabilities.
 
+# App Name:
 
+Ticko – Your Productivity Partner
 
-# Explanation: 
-Prompt:
-"Design a personal productivity assistant that can help manage daily tasks, schedule reminders, suggest wellness tips, and answer general queries. The assistant should interact using natural language and be adaptable to the user’s changing preferences over time."
-Procedure:
-1. Define the core requirements of a personal productivity assistant.
-2. Identify and construct appropriate prompts for each task using an LLM (e.g., ChatGPT).
-3. Simulate natural user interaction through a simple interface or command-line system.
-4. Collect feedback or inputs from users and adapt responses accordingly.
-5. (Optional) Integrate basic memory to simulate preference adaptation.
-EXPECTED OUTPUT: - (attached the drive link)
-Output (Example Response by LLM):
-Personal Productivity Assistant Features:
-1. Daily Task Manager:
-o Accept tasks via natural language (e.g., "Remind me to call mom at 6 PM").
-o Organize tasks by priority and deadline.
-o Provide daily summaries and pending items.
-2. Smart Scheduler:
-o Schedule events and set reminders using contextual understanding.
-o Notify user of overlapping appointments or free time slots.
-3. Wellness Tips Generator:
-o Suggest daily wellness advice (hydration, exercise, screen-time breaks).
-o Adapt suggestions based on past user preferences and responses.
+# Objective:
 
+To create an interactive AI-based productivity buddy that helps users manage their daily routines, stay organized, and maintain wellness through conversational prompts.
 
+# Software/Tools Used:
 
-A prompt-based application uses a Large Language Model (LLM) like ChatGPT to generate intelligent and context-aware responses based on user inputs.
-Here, the system acts as a Personal Productivity Assistant that can:
+->Loveable AI
 
-Accept and organize daily tasks.
+# Description:
 
-Schedule reminders.
+The developed application, Ticko, is an AI productivity buddy that interacts with users via chat prompts. Users can:
 
-Suggest health and wellness tips.
+  1. Add, update, or delete tasks.
 
-Answer user’s general questions.
+  2. View the day’s tasks and schedule.
 
-This exercise demonstrates prompt engineering — how carefully crafted prompts lead to efficient and personalized outputs.
+  3. Receive priority-based reminders and wellness tips.
 
-# Prompt:
+  4. Interact naturally using simple text prompts.
 
-“Design a personal productivity assistant that can help manage daily tasks, schedule reminders, suggest wellness tips, and answer general queries. The assistant should interact using natural language and be adaptable to the user’s changing preferences over time.”
+**The interface displays two main sections:**
 
-# Procedure:
+  1. Chat with Ticko Panel: Users can type prompts such as:
 
-1.Define Core Requirements – Identify functionalities like task management, scheduling, and wellness support.
+    -> “List my tasks for today.”
 
-2.Design Prompts – Frame natural language prompts for each function.
+    -> “Remind me to study at 4 PM.”
 
-3.Implement Using Python (optional) – Simulate prompt interaction via command line.
+    -> “I feel tired.” (to get motivational or wellness tips)
 
-4.Test Interactions – Observe how responses vary with different prompt structures.
+2. Task and Schedule Panels:
+    -> Display current tasks with color-coded priority tags (High, Medium).
 
-5.Refine and Document – Record prompts, responses, and performance in tabular form.
+    -> Show today’s schedule with time, category, and duration.
 
-# Sample Code Implementation (Python Simulation):
+# Algorithm / Workflow:
 
-# Personal Productivity Assistant Simulation using ChatGPT API (Example)
+1. Start
 
-import openai
+2. Initialize AI chat interface (Ticko).
 
-openai.api_key = "your_api_key_here"
+3. User Input: Accept user prompt (task request or wellness query).
 
-def assistant_response(prompt):
+4. Process Prompt:
 
-    response = openai.ChatCompletion.create(
-    
-        model="gpt-3.5-turbo",
-        
-        messages=[{"role": "user", "content": prompt}]
-    )
-    
-    return response["choices"][0]["message"]["content"]
-    
+   -> Parse and interpret user intent using LLM.
 
-# Simulated user interactions
+   -> Retrieve or modify relevant data (tasks/schedules).
 
-print("Welcome to your AI Personal Assistant!")
+5. Display Output:
 
-while True:
+   -> Update task list dynamically.
 
-    user_input = input("You: ")
-    
-    if user_input.lower() in ["exit", "quit"]:
-    
-        print("Assistant: Goodbye! Have a productive day!")
-        
-        break
-        
-    reply = assistant_response(user_input)
-    
-    print("Assistant:", reply)
-    
+   -> Provide responses or motivational feedback.
 
-# Explanation:
+6. User Interaction:
+   -> User can click checkboxes to mark tasks complete.
 
-The code takes user input and sends it to ChatGPT.
-It returns natural-language responses, simulating a productivity chatbot.
-The user can exit anytime by typing “exit” or “quit”.
+   -> Chat continues with new requests.
 
-# Tabular Representation of Prompt Design and Output:
+7. End
 
-| S.No | Feature       | Example Prompt                                                | Example Response (by ChatGPT)                                                  |
-| :--: | :------------ | :------------------------------------------------------------ | :----------------------------------------------------------------------------- |
-|   1  | Task Manager  | “Add a reminder to pay the electricity bill at 6 PM.”         | “Got it! I’ll remind you at 6 PM to pay your electricity bill.”                |
-|   2  | Scheduler     | “Schedule a meeting with the project team tomorrow at 11 AM.” | “Meeting scheduled for tomorrow at 11 AM with your project team.”              |
-|   3  | Wellness Tips | “Give me a wellness tip for today.”                           | “Take a 5-minute walk every 2 hours to reduce screen fatigue.”                 |
-|   4  | General Query | “What are some time management strategies?”                   | “Try the Pomodoro technique and prioritize tasks using the Eisenhower Matrix.” |
-|   5  | Adaptation    | “I prefer wellness tips in the evening.”                      | “Sure! I’ll share your daily wellness tip at 7 PM from now on.”                |
+# Sample Prompts:
 
-# Expected Output:
+-> “Add task: Call mom at 6 PM (high priority).”
 
-A responsive AI assistant capable of:
+-> “List today’s tasks.”
 
-->Understanding natural language commands.
-->Managing and prioritizing tasks.
-->Scheduling and reminding events.
-->Offering adaptive wellness suggestions.
-->Responding conversationally to general queries.
+-> “Give me a wellness tip.”
 
-# Example Interaction:
+-> “Remind me to take a walk at 5 PM.”
 
-User: “Remind me to complete my lab report by 5 PM.”
-Assistant: “Sure! I’ll remind you at 5 PM to complete your lab report.”
+# Result:
 
-User: “Give me a wellness tip for concentration.”
-Assistant: “Try the 20-20-20 rule — every 20 minutes, look at something 20 feet away for 20 seconds.”
+A functional prompt-based AI productivity assistant was developed successfully. The application can interpret natural language prompts, manage personal tasks, display schedules, and respond with productivity or wellness advice interactively.
 
+# Output:
 
-# Result: 
-The lab exercise resulted in the creation of a prototype concept for a personal assistant powered by large language models. Students were able to:
- Understand how to tailor LLM prompts to real-life applications.
- Foster creativity by designing features suited to their personal or academic lives.
- Learn prompt engineering techniques for optimal interaction with AI tools.
- Experience the versatility and utility of generative AI in solving everyday problems.
+<img width="1915" height="966" alt="Screenshot 2025-11-08 085839" src="https://github.com/user-attachments/assets/c761bcb9-be60-4072-909d-d9e5c7aea58e" />
+
+# Website Link:
+
+https://lovable.dev/projects/98ed3ad8-a18c-4da4-9fa7-12f1b0603228
+
+# Applications:
+
+1. Personal productivity management
+
+2. AI-based scheduling assistants
+
+3. Educational task planners for students
+
+4. Wellness and motivation companion
 
 # Conclusion:
 
-This experiment enhanced the understanding of prompt-based design and AI-driven productivity systems.
-By combining creativity with structured prompt design, students successfully developed a conceptual prototype of an intelligent personal assistant.
+The experiment successfully demonstrates how large language models can be integrated into personalized applications to improve productivity, enhance time management, and promote user engagement through prompt-driven interactions.
